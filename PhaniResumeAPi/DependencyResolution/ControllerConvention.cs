@@ -45,10 +45,10 @@ namespace PhaniResumeAPi.DependencyResolution {
         }
         public void ScanTypes(TypeSet types, Registry registry)
         {
-            foreach (var type in types.AllTypes())
-            {
-                Process(type, registry);
-            }
+            //foreach (var type in types.AllTypes())
+            //{
+            //    Process(type, registry);
+            //}
         }
         
 

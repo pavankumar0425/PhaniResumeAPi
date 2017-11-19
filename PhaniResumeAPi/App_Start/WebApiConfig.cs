@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Web.Http;
+using WebApiProxy.Server;
 
 namespace PhaniResumeAPi
 {
@@ -9,6 +11,10 @@ namespace PhaniResumeAPi
     {
         public static void Register(HttpConfiguration config)
         {
+            config.RegisterProxyRoutes("proxies");
+
+
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.MediaTypeMappings.Add(new RequestHeaderMapping("Accept","text/html",StringComparison.InvariantCultureIgnoreCase,true,"application/json"));
             // Web API configuration and services
 
             // Web API routes
