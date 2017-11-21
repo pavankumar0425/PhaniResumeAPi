@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using PhaniResume.DataLayer.Interface;
@@ -21,6 +23,16 @@ namespace PhaniResume.DataLayer
         public List<Data_ResumeDetail> GetAllResumeDetailsByCustomer()
         {
           return _phaniDbContext.ResumeDetails.ToList();
+        }
+
+
+        public Data_CustomerDetail GetcustomerByCustomer(int customerId)
+        {
+            return _phaniDbContext.CustomerDetails
+                .Include(x => x.ResumeDetails)
+                .Include(x=>x.ResumeDetails.Select(y=>y.DisplayStyle))
+                .First(x=>x.CustomerDetailsID == customerId);
+
         }
     }
 }

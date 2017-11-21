@@ -52,6 +52,8 @@ namespace PhaniResumeAPi.DependencyResolution {
 
         public IContainer CurrentNestedContainer {
             get {
+                if(HttpContext == null)
+                    return new Container();
                 return (IContainer)HttpContext.Items[NestedContainerKey];
             }
             set {
@@ -66,8 +68,10 @@ namespace PhaniResumeAPi.DependencyResolution {
         private HttpContextBase HttpContext {
             get {
                 var ctx = Container.TryGetInstance<HttpContextBase>();
-                return ctx ?? new HttpContextWrapper(System.Web.HttpContext.Current);
-            }
+                if (System.Web.HttpContext.Current == null)
+                    return null;
+                    return ctx ?? new HttpContextWrapper(System.Web.HttpContext.Current);
+                }
         }
 
         #endregion

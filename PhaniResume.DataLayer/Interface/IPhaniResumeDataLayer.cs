@@ -10,5 +10,6 @@ namespace PhaniResume.DataLayer.Interface
     public interface IPhaniResumeDataLayer
     {
         List<Data_ResumeDetail> GetAllResumeDetailsByCustomer();
+        Data_CustomerDetail GetcustomerByCustomer(int customerId);
     }
 }

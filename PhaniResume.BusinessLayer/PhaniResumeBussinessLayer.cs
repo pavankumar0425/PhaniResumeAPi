@@ -30,5 +30,11 @@ namespace PhaniResume.BusinessLayer
             return _mapper.Map<List<Data_ResumeDetail>, List<ResumeDetail>>(s);
             
         }
+
+        public CustomerDetail GetcustomerByCustomer(int customerId)
+        {
+            var s = _phaniResumeDataLayer.GetcustomerByCustomer(customerId);
+            return _mapper.Map<Data_CustomerDetail, CustomerDetail>(s);
+        }
     }
 }

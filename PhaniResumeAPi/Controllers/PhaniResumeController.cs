@@ -46,5 +46,28 @@ namespace PhaniResumeAPi.Controllers
             }
 
         }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetcustomerByCustomer")]
+        [ResponseType(typeof(CustomerDetail))]
+        public IHttpActionResult GetcustomerByCustomer(int customerId)
+        {
+            try
+            {
+                var result = _phaniResumeBussinessLayer.GetcustomerByCustomer(customerId);
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return ResponseMessage(Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e.Message));
+            }
+
+        }
     }
 }
