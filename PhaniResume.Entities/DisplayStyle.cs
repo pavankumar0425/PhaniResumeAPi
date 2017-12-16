@@ -18,10 +18,8 @@ namespace PhaniResume.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DisplayStyleID { get; set; }
 
-        [StringLength(500)]
         public string Name { get; set; }
 
-        [StringLength(500)]
         public string Description { get; set; }
 
         public virtual ICollection<ResumeDetail> ResumeDetails { get; set; }

@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace PhaniResume.SqlDataBaseLayer.Entities.resume
 {
-    [Table("ResumeDetails")]
     public class Data_ResumeDetail
     {
-        [Key]
         public int ResumeDetailsId { get; set; }
 
         [Column("CAREER OBJECTIVE")]

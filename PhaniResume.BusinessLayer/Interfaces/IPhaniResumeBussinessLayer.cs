@@ -9,7 +9,9 @@ namespace PhaniResume.BusinessLayer.Interfaces
 {
    public  interface IPhaniResumeBussinessLayer
    {
-       List<ResumeDetail> GetAllResumeDetailsByCustomer();
+       List<ResumeDetail> GetAllResumeDetailsByCustomer(int customerId);
        CustomerDetail GetcustomerByCustomer(int customerId);
+       bool SaveResumeDetails(CustomerDetail customerDetail);
+
    }
 }

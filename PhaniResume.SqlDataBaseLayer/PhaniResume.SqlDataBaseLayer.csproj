@@ -52,13 +52,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Entities\resume\Configuration\CustomerDetailsConfiguration.cs" />
     <Compile Include="Entities\resume\Configuration\DisplayStyleConfiguration.cs" />
+    <Compile Include="Entities\resume\Configuration\ResumeDetailsConfiguration.cs" />
     <Compile Include="Entities\resume\Data_CustomerDetail.cs" />
     <Compile Include="Entities\resume\Data_DisplayStyle.cs" />
     <Compile Include="Entities\resume\Data_ResumeDetail.cs" />
     <Compile Include="IPhaniDbContext.cs" />
     <Compile Include="PhaniDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\Specification.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

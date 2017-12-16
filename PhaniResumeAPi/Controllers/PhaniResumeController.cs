@@ -32,11 +32,11 @@ namespace PhaniResumeAPi.Controllers
         [HttpGet]
         [Route("GetAllResumeDetailsByCustomer")]
         [ResponseType(typeof(List<ResumeDetail>))]
-        public IHttpActionResult GetAllResumeDetailsByCustomer()
+        public IHttpActionResult GetAllResumeDetailsByCustomer(int customerId)
         {
             try
             {
-                var result = _phaniResumeBussinessLayer.GetAllResumeDetailsByCustomer();
+                var result = _phaniResumeBussinessLayer.GetAllResumeDetailsByCustomer(customerId);
                 return Ok(result);
             }
             catch (Exception e)
@@ -60,6 +60,29 @@ namespace PhaniResumeAPi.Controllers
             try
             {
                 var result = _phaniResumeBussinessLayer.GetcustomerByCustomer(customerId);
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return ResponseMessage(Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e.Message));
+            }
+
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("SaveResumeDetails")]
+        [ResponseType(typeof(bool))]
+        public IHttpActionResult GetcustomerByCustomer(CustomerDetail customerDetail)
+        {
+            try
+            {
+                var result = _phaniResumeBussinessLayer.SaveResumeDetails(customerDetail);
                 return Ok(result);
             }
             catch (Exception e)

@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace PhaniResume.SqlDataBaseLayer.Entities.resume
 {
-    [Table("CustomerDetails")]
     public class Data_CustomerDetail
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -17,7 +16,6 @@ namespace PhaniResume.SqlDataBaseLayer.Entities.resume
             ResumeDetails = new HashSet<Data_ResumeDetail>();
         }
 
-        [Key]
         public int CustomerDetailsID { get; set; }
 
         [StringLength(500)]

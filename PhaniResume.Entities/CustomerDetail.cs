@@ -14,19 +14,14 @@ namespace PhaniResume.Entities
             ResumeDetails = new HashSet<ResumeDetail>();
         }
 
-        [Key]
         public int CustomerDetailsID { get; set; }
 
-        [StringLength(500)]
         public string FirstName { get; set; }
 
-        [StringLength(500)]
         public string LastName { get; set; }
 
-        [StringLength(50)]
         public string phoneNumber { get; set; }
 
-        [StringLength(50)]
         public string Zipcode { get; set; }
 
         public virtual ICollection<ResumeDetail> ResumeDetails { get; set; }

@@ -24,9 +24,9 @@ namespace PhaniResume.BusinessLayer
             _mapper = mapper;
         }
 
-        public List<ResumeDetail> GetAllResumeDetailsByCustomer()
+        public List<ResumeDetail> GetAllResumeDetailsByCustomer(int customerId)
         {
-            var s = _phaniResumeDataLayer.GetAllResumeDetailsByCustomer().ToList();
+            var s = _phaniResumeDataLayer.GetAllResumeDetailsByCustomer(customerId).ToList();
             return _mapper.Map<List<Data_ResumeDetail>, List<ResumeDetail>>(s);
             
         }
@@ -36,5 +36,11 @@ namespace PhaniResume.BusinessLayer
             var s = _phaniResumeDataLayer.GetcustomerByCustomer(customerId);
             return _mapper.Map<Data_CustomerDetail, CustomerDetail>(s);
         }
+
+        public bool SaveResumeDetails(CustomerDetail customerDetail)
+        {
+            var result = _mapper.Map<CustomerDetail,Data_CustomerDetail>(customerDetail);
+            return _phaniResumeDataLayer.SaveResumeDetails(result);
+        }
     }
-}
+} 

@@ -10,24 +10,14 @@ namespace PhaniResume.Entities
 {
    public class ResumeDetail
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ResumeDetailsId { get; set; }
 
-        [Column("CAREER OBJECTIVE")]
-        [StringLength(4000)]
         public string CAREER_OBJECTIVE { get; set; }
 
-        [Column("HONORS AND REWARDS")]
-        [StringLength(4000)]
         public string HONORS_AND_REWARDS { get; set; }
 
-        [Column("PROFESSIONAL RESPONSIBILITIES")]
-        [StringLength(4000)]
         public string PROFESSIONAL_RESPONSIBILITIES { get; set; }
 
-        [Column("RELATED EXPERIENCE")]
-        [StringLength(4000)]
         public string RELATED_EXPERIENCE { get; set; }
 
         public int? CustomerDetailsID { get; set; }
