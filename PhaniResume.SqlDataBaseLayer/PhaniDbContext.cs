@@ -16,6 +16,7 @@ namespace PhaniResume.SqlDataBaseLayer
         public PhaniDbContext() : base(ConnectionString())
         {
             Configuration.LazyLoadingEnabled = true;
+            Configuration.ProxyCreationEnabled = false;
         }
 
         private static string ConnectionString()

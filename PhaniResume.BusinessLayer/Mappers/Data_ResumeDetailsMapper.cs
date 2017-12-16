@@ -13,9 +13,9 @@ namespace PhaniResume.BusinessLayer.Mappers
     {
         public Data_ResumeDetailsMapper()
         {
-            CreateMap<Data_ResumeDetail, ResumeDetail>().PreserveReferences();
-            CreateMap<Data_DisplayStyle, DisplayStyle>().PreserveReferences();
-            CreateMap<Data_CustomerDetail, CustomerDetail>().PreserveReferences();
+            CreateMap<Data_ResumeDetail, ResumeDetail>().MaxDepth(1);
+            CreateMap<Data_DisplayStyle, DisplayStyle>().MaxDepth(1);
+            CreateMap<Data_CustomerDetail, CustomerDetail>().MaxDepth(1);
         }
     }
 }
